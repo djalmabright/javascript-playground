@@ -1,7 +1,7 @@
 Express
+https://github.com/djalmabright/nodejs-web-crawler
 
-
-Request - Simplified HTTP request client.
+REQUEST - Simplified HTTP request client.
 var fs = require('fs')
   , path = require('path')
   , http = require('http')
@@ -24,7 +24,8 @@ fs.createReadStream(TMP_FILE_PATH)
   .pipe(request.post('http://127.0.0.1:3000'))
 ;
 
-browserify- browser-side require() the node.js way :
+BROWSERIFY- browser-side require() the node.js way :
+
 npm install -g browserify
 var foo = require('./foo.js');
 var bar = require('../lib/bar.js');
