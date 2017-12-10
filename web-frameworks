@@ -23,3 +23,15 @@ http.createServer(function(req, res) {
 fs.createReadStream(TMP_FILE_PATH)
   .pipe(request.post('http://127.0.0.1:3000'))
 ;
+
+browserify- browser-side require() the node.js way :
+npm install -g browserify
+var foo = require('./foo.js');
+var bar = require('../lib/bar.js');
+var gamma = require('gamma');
+
+var elem = document.getElementById('result');
+var x = foo(100) + bar('baz');
+elem.textContent = gamma(x);
+module.exports = function (n) { return n * 111 }
+$ browserify main.js > bundle.js
