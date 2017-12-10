@@ -1,0 +1,18 @@
+var Module = (function () {
+  return {
+    myMethod: function () {
+      console.log('myMethod has been called.');
+    }
+  };
+})();
+
+var name = 'Todd';
+var scope1 = function () {
+  // name is available here
+  var scope2 = function () {
+    // name is available here too
+    var scope3 = function () {
+      // name is also available here!
+    };
+  };
+};
