@@ -1,4 +1,4 @@
-Strict  Mode  -   Using  "constant"  and  "let"  features  and  "import" 
+//Strict  Mode  -   Using  "constant"  and  "let"  features  and  "import" 
 
 var configuration = {"iceServers": [{"url": "stun:stun.l.google.com:19302"}]};
 var pc = new RTCPeerConnection(configuration);
