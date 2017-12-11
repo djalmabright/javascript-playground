@@ -1,4 +1,4 @@
-Functions  and  Closures  together  !
+// Functions  and  Closures  together  
 function getMeAClosure() {
     var canYouSeeMe = "here I am";
     return (function theClosure() {
