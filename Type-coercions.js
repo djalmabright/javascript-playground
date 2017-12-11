@@ -1,5 +1,4 @@
-JSON Stringfying  Type  coercions
-
+// JSON Stringfying  Type  coercions
 var o = { };
 
 var a = {
