@@ -1,7 +1,4 @@
-tar command examples
-
-Create a new tar archive.
-
+1.tar command  examples 
 $ tar cvf archive_name.tar dirname/
 Extract from an existing tar archive.
 
@@ -12,164 +9,108 @@ $ tar tvf archive_name.tar
 More tar examples: The Ultimate Tar Command Tutorial with 10 Practical Examples
 
 2. grep command examples
-
-Search for a given string in a file (case in-sensitive search).
-
-
- 
 $ grep -i "the" demo_file
 Print the matched line, along with the 3 lines after it.
-
 $ grep -A 3 -i "example" demo_text
 Search for a given string in all files recursively
-
 $ grep -r "ramesh" *
 More grep examples: Get a Grip on the Grep! – 15 Practical Grep Command Examples
 
 3. find command examples
 
-Find files using file-name ( case in-sensitve find)
-
 # find -iname "MyCProgram.c"
-Execute commands on files found by the find command
-
 $ find -iname "MyCProgram.c" -exec md5sum {} \;
-Find all empty files in home directory
-
 # find ~ -empty
 More find examples: Mommy, I found it! — 15 Practical Linux Find Command Examples
 
 4. ssh command examples
-
 Login to remote host
-
 ssh -l jsmith remotehost.example.com
 Debug ssh client
-
 ssh -v -l jsmith remotehost.example.com
 Display ssh client version
-
 $ ssh -V
 OpenSSH_3.9p1, OpenSSL 0.9.7a Feb 19 2003
 More ssh examples: 5 Basic Linux SSH Client Commands
 
 5. sed command examples
-
-When you copy a DOS file to Unix, you could find \r\n in the end of each line. This example converts the DOS file format to Unix file format using sed command.
-
+When you copy a DOS file to Unix, you could find \r\n in the end of each line. 
+This example converts the DOS file format to Unix file format using sed command.
 $sed 's/.$//' filename
 Print file content in reverse order
-
 $ sed -n '1!G;h;$p' thegeekstuff.txt
 Add line number for all non-empty-lines in a file
-
 $ sed '/./=' thegeekstuff.txt | sed 'N; s/\n/ /'
 More sed examples: Advanced Sed Substitution Examples
 
 6. awk command examples
-
-Remove duplicate lines using awk
-
 $ awk '!($0 in array) { array[$0]; print }' temp
 Print all lines from /etc/passwd that has the same uid and gid
-
 $awk -F ':' '$3==$4' passwd.txt
 Print only specific field from a file.
-
 $ awk '{print $2,$5;}' employee.txt
 More awk examples: 8 Powerful Awk Built-in Variables – FS, OFS, RS, ORS, NR, NF, FILENAME, FNR
 
 7. vim command examples
-
-Go to the 143rd line of file
-
 $ vim +143 filename.txt
 Go to the first match of the specified
-
 $ vim +/search-term filename.txt
 Open the file in read only mode.
-
 $ vim -R /etc/passwd
 More vim examples: How To Record and Play in Vim Editor
 
 8. diff command examples
-
-Ignore white space while comparing.
-
 # diff -w name_list.txt name_list_new.txt
-
 2c2,3
 < John Doe --- > John M Doe
 > Jason Bourne
 More diff examples: Top 4 File Difference Tools on UNIX / Linux – Diff, Colordiff, Wdiff, Vimdiff
 
 9. sort command examples
-
-Sort a file in ascending order
-
 $ sort names.txt
 Sort a file in descending order
-
 $ sort -r names.txt
 Sort passwd file by 3rd field.
-
 $ sort -t: -k 3n /etc/passwd | more
+
 10. export command examples
-
-To view oracle related environment variables.
-
 $ export | grep ORACLE
 declare -x ORACLE_BASE="/u01/app/oracle"
 declare -x ORACLE_HOME="/u01/app/oracle/product/10.2.0"
 declare -x ORACLE_SID="med"
 declare -x ORACLE_TERM="xterm"
 To export an environment variable:
+$ export ORACLE_HOME=/u01/app/oracle/product/10.2.
 
-$ export ORACLE_HOME=/u01/app/oracle/product/10.2.0
 11. xargs command examples
-
 Copy all images to external hard-drive
-
 # ls *.jpg | xargs -n1 -i cp {} /external-hard-drive/directory
 Search all jpg images in the system and archive it.
-
 # find / -name *.jpg -type f -print | xargs tar -cvzf images.tar.gz
 Download all the URLs mentioned in the url-list.txt file
-
 # cat url-list.txt | xargs wget –c
+
 12. ls command examples
-
 Display filesize in human readable format (e.g. KB, MB etc.,)
-
 $ ls -lh
 -rw-r----- 1 ramesh team-dev 8.9M Jun 12 15:27 arch-linux.txt.gz
 Order Files Based on Last Modified Time (In Reverse Order) Using ls -ltr
-
 $ ls -ltr
 Visual Classification of Files With Special Characters Using ls -F
-
 $ ls -F
 More ls examples: Unix LS Command: 15 Practical Examples
 
 13. pwd command
-
 pwd is Print working directory. What else can be said about the good old pwd who has been printing the current directory name for ages.
-
 14. cd command examples
-
 Use “cd -” to toggle between the last two directories
-
 Use “shopt -s cdspell” to automatically correct mistyped directory names on cd
-
 More cd examples: 6 Awesome Linux cd command Hacks
 
 15. gzip command examples
-
 To create a *.gz compressed file:
-
 $ gzip test.txt
 To uncompress a *.gz file:
-
 $ gzip -d test.txt.gz
 Display compression ratio of the compressed file using gzip -l
 
@@ -177,19 +118,14 @@ $ gzip -l *.gz
          compressed        uncompressed  ratio uncompressed_name
               23709               97975  75.8% asp-patch-rpms.txt
 16. bzip2 command examples
-
 To create a *.bz2 compressed file:
-
 $ bzip2 test.txt
 To uncompress a *.bz2 file:
-
 bzip2 -d test.txt.bz2
 More bzip2 examples: BZ is Eazy! bzip2, bzgrep, bzcmp, bzdiff, bzcat, bzless, bzmore examples
 
 17. unzip command examples
-
 To extract a *.zip compressed file:
-
 $ unzip test.zip
 View the contents of *.zip file (Without unzipping it):
 
@@ -202,27 +138,23 @@ Archive:  jasper.zip
     15964  08-25-98 21:07   classes_names
     10542  08-25-98 21:07   classes_ncomp
 18. shutdown command examples
-
 Shutdown the system and turn the power off immediately.
 
 # shutdown -h now
 Shutdown the system after 10 minutes.
-
 # shutdown -h +10
 Reboot the system using shutdown command.
 
 # shutdown -r now
 Force the filesystem check during reboot.
-
 # shutdown -Fr now
 19. ftp command examples
-
-Both ftp and secure ftp (sftp) has similar commands. To connect to a remote server and download multiple files, do the following.
+Both ftp and secure ftp (sftp) has similar commands. 
+To connect to a remote server and download multiple files, do the following.
 
 $ ftp IP/hostname
 ftp> mget *.html
 To view the file names located on the remote server before downloading, mls ftp command as shown below.
-
 ftp> mls *.html -
 /ftptest/features.html
 /ftptest/index.html
@@ -329,17 +261,15 @@ Filesystem    Type   1K-blocks      Used Available Use% Mounted on
 /dev/sda1     ext4    29530400   3233120  24797216  12% /
 /dev/sda2     ext4   120367992  50171596  64082060  44% /home
 26. kill command examples
-
-Use kill command to terminate a process. First get the process id using ps -ef command, then use kill -9 to kill the running Linux process as shown below. You can also use killall, pkill, xkill to terminate a unix process.
-
+Use kill command to terminate a process. 
+First get the process id using ps -ef command, then use kill -9 to kill the running Linux process as shown below. 
+You can also use killall, pkill, xkill to terminate a unix process.
 $ ps -ef | grep vim
 ramesh    7243  7222  9 22:43 pts/2    00:00:00 vim
-
 $ kill -9 7243
 More kill examples: 4 Ways to Kill a Process – kill, killall, pkill, xkill
 
 27. rm command examples
-
 Get confirmation before removing the file.
 
 $ rm -i filename.txt
@@ -383,38 +313,28 @@ $ cat -n /etc/logrotate.conf
     4	    create 0660 root utmp
     5	    rotate 1
     6	}
+    
 31. mount command examples
-
 To mount a file system, you should first create a directory and mount it as shown below.
-
 # mkdir /u01
-
 # mount /dev/sdb1 /u01
 You can also add this to the fstab for automatic mounting. i.e Anytime system is restarted, the filesystem will be mounted.
-
 /dev/sdb1 /u01 ext2 defaults 0 2
+
 32. chmod command examples
-
 chmod command is used to change the permissions for a file or directory.
-
 Give full access to user and group (i.e read, write and execute ) on a specific file.
-
 $ chmod ug+rwx file.txt
 Revoke all access for the group (i.e read, write and execute ) on a specific file.
 
 $ chmod g-rwx file.txt
 Apply the file permissions recursively to all the files in the sub-directories.
-
 $ chmod -R ug+rwx file.txt
 More chmod examples: 7 Chmod Command Examples for Beginners
 
 33. chown command examples
-
 chown command is used to change the owner and group of a file. \
-
 To change owner to oracle and group to db on a file. i.e Change both owner and group at the same time.
-
 $ chown oracle:dba dbora.sh
 Use -R to change the ownership recursively.
-
 $ chown -R oracle:dba /home/oracle
