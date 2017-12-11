@@ -1,7 +1,7 @@
-Express
-https://github.com/djalmabright/nodejs-web-crawler
+ // Express
+//Example - https://github.com/djalmabright/nodejs-web-crawler
 
-REQUEST - Simplified HTTP request client.
+// REQUEST - Simplified HTTP request client.
 var fs = require('fs')
   , path = require('path')
   , http = require('http')
@@ -24,21 +24,19 @@ fs.createReadStream(TMP_FILE_PATH)
   .pipe(request.post('http://127.0.0.1:3000'))
 ;
 
-BROWSERIFY- browser-side require() the node.js way :
-
-npm install -g browserify
+// BROWSERIFY- browser-side require() the node.js way  -  npm install -g browserify
 var foo = require('./foo.js');
 var bar = require('../lib/bar.js');
 var gamma = require('gamma');
-
 var elem = document.getElementById('result');
 var x = foo(100) + bar('baz');
 elem.textContent = gamma(x);
 module.exports = function (n) { return n * 111 }
+
 $ browserify main.js > bundle.js
 
-SOCKET.IO
-/ Setup basic express server
+ // SOCKET.IO  -  Simple Chat Example
+// Setup basic express server
 var express = require('express');
 var app = express();
 var server = require('http').createServer(app);
@@ -56,11 +54,8 @@ server.listen(port, function () {
 
 // Routing
 app.use(express.static(__dirname + '/public'));
-
 // Chatroom
-
 var numUsers = 0;
-
 io.on('connection', function (socket) {
   socket.emit('my-name-is', serverName);
 
