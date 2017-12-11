@@ -1,4 +1,5 @@
-var vehicle = function(attrs) {
+ // Inheritance model and sub-classes
+ var vehicle = function(attrs) {
     var _privateObj = {
         hasEngine: true
     },
