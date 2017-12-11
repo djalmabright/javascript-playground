@@ -1,5 +1,5 @@
- // Express
-//Example - https://github.com/djalmabright/nodejs-web-crawler
+ // Express   -  Simple  Chat  application
+ https://github.com/djalmabright/chat-example
 
 // REQUEST - Simplified HTTP request client.
 var fs = require('fs')
