@@ -3,6 +3,8 @@ Express.js is one of the essential web frameworks for Node.js.
 It is a minimalist framework for building a host of web and mobile applications as well as application programming interfaces (APIs).  
 A lot of popular applications and websites like MySpace, Geekli.st, Klout, Segment.io and Yummly are powered by Express.js. 
 Express.js offer various features, like template engines, simplified multiple routing, database integration and more.
+/ Express   -  Simple  Chat  application
+ https://github.com/djalmabright/chat-example
 
 2) Hapi.js
 Hapi.js is a powerful Node.js web framework for building application program interfaces (APIs) and other software applications. 
@@ -19,6 +21,87 @@ Socket.io works as a client-side library running in the browser and as a server-
 The framework allows real-time concurrency for document collaboration and data exchange. 
 Moreover, its key features also include asynchronous input/ output (I/O) processing, 
 binary streaming, instant messaging (‘Hello World’ chat application) and more.
+
+Simple Chat Example
+// Setup basic express server
+var express = require('express');
+var app = express();
+var server = require('http').createServer(app);
+var io = require('socket.io')(server);
+var redis = require('socket.io-redis');
+var port = process.env.PORT || 3000;
+var serverName = process.env.NAME || 'Unknown';
+io.adapter(redis({ host: 'redis', port: 6379 }));
+
+server.listen(port, function () {
+  console.log('Server listening at port %d', port);
+  console.log('Hello, I\'m %s, how can I help?', serverName);
+});
+
+// Routing
+app.use(express.static(__dirname + '/public'));
+// Chatroom
+var numUsers = 0;
+io.on('connection', function (socket) {
+  socket.emit('my-name-is', serverName);
+
+  var addedUser = false;
+
+  // when the client emits 'new message', this listens and executes
+  socket.on('new message', function (data) {
+    // we tell the client to execute 'new message'
+    socket.broadcast.emit('new message', {
+      username: socket.username,
+      message: data
+    });
+  });
+
+  // when the client emits 'add user', this listens and executes
+  socket.on('add user', function (username) {
+    if (addedUser) return;
+
+    // we store the username in the socket session for this client
+    socket.username = username;
+    ++numUsers;
+    addedUser = true;
+    socket.emit('login', {
+      numUsers: numUsers
+    });
+    // echo globally (all clients) that a person has connected
+    socket.broadcast.emit('user joined', {
+      username: socket.username,
+      numUsers: numUsers
+    });
+  });
+
+  // when the client emits 'typing', we broadcast it to others
+  socket.on('typing', function () {
+    socket.broadcast.emit('typing', {
+      username: socket.username
+    });
+  });
+
+  // when the client emits 'stop typing', we broadcast it to others
+  socket.on('stop typing', function () {
+    socket.broadcast.emit('stop typing', {
+      username: socket.username
+    });
+  });
+
+  // when the user disconnects.. perform this
+  socket.on('disconnect', function () {
+    if (addedUser) {
+      --numUsers;
+
+      // echo globally that this client has left
+      socket.broadcast.emit('user left', {
+        username: socket.username,
+        numUsers: numUsers
+      });
+    }
+  });
+});
+
 
 4) Mojito.
 Mojito is a JavaScript framework based on Yahoo! Cocktails, a mobile application development platform introduced by Yahoo! Developer Network. JavaScript is the only programming language which is used for Yahoo! Cocktails Platform. Since client and server components are both written in JavaScript, Mojito can run on both the client side (browser) and the server (Node.js).
@@ -68,4 +151,35 @@ Total.js is fully extensible and asynchronous.
 One great feature of Total.js is that you don’t need any tools like Grunt to compress JavaScript, HTML and CSS.  
 Additionally, the framework has NoSQL embedded database and supports array and other prototypes.   
 It supports RESTful routing mechanism, supports web sockets, media streaming and more.
+11) REQUEST - Simplified HTTP request client.
+var fs = require('fs')
+  , path = require('path')
+  , http = require('http')
+  , request = require('request')
+  , TMP_FILE_PATH = path.join(path.sep, 'tmp', 'foo')
+;
+
+// write a temporary file:
+fs.writeFileSync(TMP_FILE_PATH, 'foo bar baz quk\n');
+
+http.createServer(function(req, res) {
+  console.log('the server is receiving data!\n');
+  req
+    .on('end', res.end.bind(res))
+    .pipe(process.stdout)
+  ;
+}).listen(3000).unref();
+
+fs.createReadStream(TMP_FILE_PATH)
+  .pipe(request.post('http://127.0.0.1:3000'))
+;
+12) BROWSERIFY- browser-side require() the node.js way  -  npm install -g browserify
+var foo = require('./foo.js');
+var bar = require('../lib/bar.js');
+var gamma = require('gamma');
+var elem = document.getElementById('result');
+var x = foo(100) + bar('baz');
+elem.textContent = gamma(x);
+module.exports = function (n) { return n * 111 }
+$ browserify main.js > bundle.js
 
