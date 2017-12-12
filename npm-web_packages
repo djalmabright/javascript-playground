@@ -1,0 +1,108 @@
+These are the main NPM packages tagged as
+"Web development" and latest updateds.
+
+lodash
+Lodash modular utilities.
+4.17.4 published 11 months ago by jdalton
+request
+Simplified HTTP request client.
+2.83.0 published 3 months ago by mikeal
+async
+Higher-order functions and common patterns for asynchronous code
+2.6.0 published a month ago by aearly
+chalk
+Terminal string styling done right
+2.3.0 published 2 months ago by sindresorhus
+express
+Fast, unopinionated, minimalist web framework
+4.16.2 published 2 months ago by dougwilson
+bluebird
+Full featured Promises/A+ implementation with exceptionally good performance
+3.5.1 published 2 months ago by esailija
+commander
+the complete solution for node.js command-line programs
+2.12.2 published 2 weeks ago by abetomo
+react
+React is a JavaScript library for building user interfaces.
+16.2.0 published 2 weeks ago by clemmy
+debug
+small debugging utility
+3.1.0 published 3 months ago by tootallnate
+underscore
+JavaScript's functional programming helper library.
+1.8.3 published 3 years ago by jashkenas
+react-dom
+React package for working with the DOM.
+16.2.0 published 2 weeks ago by clemmy
+mkdirp
+Recursively mkdir, like `mkdir -p`
+0.5.1 published 3 years ago by substack
+fs-extra
+fs-extra contains methods that aren't included in the vanilla Node.js fs package. Such as mkdir -p, cp -r, and rm -rf.
+5.0.0 published 23 hours ago by ryanzim
+glob
+a little globber
+7.1.2 published 7 months ago by isaacs
+body-parser
+Node.js body parsing middleware
+1.18.2 published 3 months ago by dougwilson
+through2
+A tiny wrapper around Node streams2 Transform to avoid explicit subclassing noise
+2.0.3 published a year ago by rvagg
+yeoman-generator
+Rails-inspired generator system that provides scaffolding for your apps
+2.0.1 published 2 months ago by sboudrias
+babel-core
+Babel compiler core.
+6.26.0 published 4 months ago by hzoo
+gulp-util
+Utility functions for gulp plugins
+3.0.8 published 12 months ago by phated
+webpack
+Packs CommonJs/AMD modules for the browser. Allows to split your codebase into multiple bundles, which can be loaded on demand. Support loaders to preprocess files, i.e. json, jsx, es7, css, less, ... and your custom stuff.
+3.10.0 published a week ago by sokra
+rxjs
+Reactive Extensions for modern JavaScript
+5.5.5 published 6 days ago by blesh
+winston
+A multi-transport async logging library for Node.js
+2.4.0 published 2 months ago by indexzero
+gulp
+The streaming build system
+3.9.1 published 2 years ago by phated
+babel-preset-es2015
+Babel preset for all es2015 plugins.
+6.24.1 published 8 months ago by hzoo
+semver
+The semantic version parser used by npm.
+5.4.1 published 5 months ago by isaacs
+object-assign
+ES2015 `Object.assign()` ponyfill
+4.1.1 published 11 months ago by sindresorhus
+rimraf
+A deep deletion module for node (like `rm -rf`)
+2.6.2 published 3 months ago by isaacs
+redux
+Predictable state container for JavaScript apps
+3.7.2 published 5 months ago by timdorr
+shelljs
+Portable Unix shell commands for Node.js
+0.7.8 published 6 months ago by nfischer
+babel-loader
+babel module loader for webpack
+7.1.2 published 4 months ago by danez
+@angular/core
+Angular - the core framework
+5.1.0 published 6 days ago by angular
+mocha
+simple, flexible, fun test framework
+4.0.1 published 2 months ago by boneskull
+babel-polyfill
+Provides polyfills necessary for a full ES2015+ environment
+6.26.0 published 4 months ago by hzoo
+mongodb
+The official MongoDB driver for Node.js
+3.0.0-rc0 published a week ago by mbroadst
+
+
+
