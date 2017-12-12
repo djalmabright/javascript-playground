@@ -30,7 +30,8 @@ gulp.task('watch', function () {
   gulp.watch('src/**/*.*', ['default']);
 });
 
-// Gruntfile example 
+// Gruntfile example - The JavaScript Task Runner 
+"strict mode"; 
 module.exports = function(grunt) {
 
   grunt.initConfig({
