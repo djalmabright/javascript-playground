@@ -1,3 +1,8 @@
+Testing frameworks are an essential part of any successful automated testing process. 
+They can reduce maintenance costs and testing efforts and will provide a higher return on investment (ROI) for QA teams looking to optimize their agile processes.
+The goal of this article is to walk through the most common types of frameworks used today and the benefits and disadvantages of each. 
+For QA professionals new to automated testing, or those who need a quick refresher, this article will provide a high-level overview of each type of framework 
+and how they can contribute to the success of any automated testing process.
 Performing Node.js unit tests using several frameworks.
 apt-get install apache2-utils
 apt-get install npm
