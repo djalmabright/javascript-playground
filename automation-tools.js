@@ -31,7 +31,7 @@ gulp.task('watch', function () {
 });
 
 // Gruntfile example - The JavaScript Task Runner 
-"strict mode"; 
+'use strict'; 
 module.exports = function(grunt) {
 
   grunt.initConfig({
